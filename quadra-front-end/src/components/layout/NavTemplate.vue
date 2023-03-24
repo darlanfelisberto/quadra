@@ -9,7 +9,11 @@
             header
         </div>
         <div class="miolo">
-            links
+            <ul>
+                <li>
+                    <RouterLink to="/novaquadra">Nova quadra</RouterLink>
+                </li>
+            </ul>
         </div>
         <div class="footer height-size-he-foo">
             header

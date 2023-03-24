@@ -6,7 +6,7 @@ export default{
 
 <template>
     <div class="header height-size-he-foo">
-
+        header
     </div>
 </template>
 
