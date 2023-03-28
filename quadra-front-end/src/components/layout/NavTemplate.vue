@@ -5,16 +5,19 @@
 </script>
 <template>
     <nav class="nav">
-        links
+        <div class="header height-size-he-foo">
+            header
+        </div>
+        <div class="miolo">
+            links
+        </div>
+        <div class="footer height-size-he-foo">
+            header
+        </div>
     </nav>
 </template>
 
 <style>
 
-.nav{
-    height: 100%;
-    width: 300px;
-    background-color: bisque;
-}
 
 </style>

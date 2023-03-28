@@ -5,16 +5,14 @@ export default{
 </script>
 
 <template>
-    <footer>
+    <div class="footer height-size-he-foo">
 
-    </footer>
+    </div>
 </template>
 
 
 <style>
-footer{
+.footer{
     width: 100%;
-    height: 100px;
-    background-color: blueviolet;
 }
 </style>
