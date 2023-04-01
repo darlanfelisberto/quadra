@@ -1,19 +1,17 @@
 <script>
-    export default{
+import MenuLinks from '../MenuLinks.vue'
 
-    }
+
 </script>
+
 <template>
     <nav class="nav">
         <div class="header height-size-he-foo">
             header
+
         </div>
         <div class="miolo">
-            <ul>
-                <li>
-                    <RouterLink to="/novaquadra">Nova quadra</RouterLink>
-                </li>
-            </ul>
+            <MenuLinks ></MenuLinks>
         </div>
         <div class="footer height-size-he-foo">
             header
@@ -21,7 +19,4 @@
     </nav>
 </template>
 
-<style>
-
-
-</style>
+<style></style>
