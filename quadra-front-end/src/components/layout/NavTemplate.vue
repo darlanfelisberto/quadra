@@ -1,6 +1,5 @@
-<script>
+<script setup>
 import MenuLinks from '../MenuLinks.vue'
-
 
 </script>
 

@@ -1,18 +1,5 @@
 @import './base.css';
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
 
 .height-size-he-foo{
   height: 100px;
@@ -44,6 +31,7 @@ body,main,.container{
   display: flex;
   flex-direction: column;
   box-shadow: -3px 1px 14px 0px rgb(0 0 0 / 69%);
+  color: aliceblue;
 }
 
 

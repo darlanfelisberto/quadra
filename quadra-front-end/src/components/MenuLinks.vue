@@ -1,81 +1,90 @@
-<script>
-export default{
-
-}
-
-const links = [
-    {
-        label: "Nova",
-        icon: 'pi pi-fw pi-file',
-        href: 'nova',
-        permissao: 'cad'
-    },
-    {
-        label: "UsuÁrio",
-        icon: 'pi pi-fw pi-user',
-        href: 'usuario',
-        permissao: 'usuario'
-    }
-];
+<script setup>
 
 </script>
 <template>
-    <div class="menu-link">
-        <ul>
-            <li>
-                <RouterLink to="/novaquadra">Nova quadra</RouterLink>
-            </li>
-        </ul>
-
-        <ul>
-            <li>
-                <a href="#"><i class="ion-bag"></i> <span>Shop</span></a>
-                <ul class="nav-flyout">
-                    <li>
-                        <a href="#"><i class="ion-ios-color-filter-outline"></i>Derps</a>
+    <div class="ui-panelmenu">
+            <h3 class="ui-panelmenu-header">
+                <a href="#" class="ui-menuitem-link">
+                    <span class="ui-menuitem-icon ui-icon pi pi-angle-down"></span>
+                    <span class="ui-menuitem-text">Option</span>
+                </a>
+            </h3>
+            <div class="ui-panelmenu-content ">
+                <ul class="ui-menu-list">
+                    <li >
+                        <a class="ui-menuitem-link" href="#">
+                            <span class="ui-menuitem-icon ui-icon pi pi-save"></span>
+                            <span class="ui-menuitem-text">Save (Non-Ajax)</span>
+                        </a>
+                    </li>
+                    <li >
+                        <a class="ui-menuitem-link" href="#">
+                            <span class="ui-menuitem-icon ui-icon pi pi-refresh"></span>
+                            <span class="ui-menuitem-text">Refresh</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#"><i class="ion-ios-clock-outline"></i>Times</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="ion-android-star-outline"></i>Hates</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="ion-heart-broken"></i>Beat</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="ion-ios-settings"></i> <span class="">Controls</span></a>
-                <ul class="nav-flyout p-panelmenu">
-                    <li>
-                        <a href="#"><i class="ion-ios-alarm-outline"></i>Watch</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="ion-ios-camera-outline"></i>Creeper</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="ion-ios-chatboxes-outline"></i>Hate</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="ion-ios-cog-outline"></i>Grinder</a>
+                        <a class="ui-menuitem-link ui-corner-all" href="#">
+                            <span class="ui-menuitem-icon ui-icon pi pi-times"></span>
+                            <span class="ui-menuitem-text">Cancelar</span>
+                        </a>
                     </li>
                 </ul>
-            </li>
-        </ul>
+            </div>
+        
     </div>
 </template>
 
 <style>
-.menu-link>ul,
-li {
-    margin: 0;
-    padding: 5px;
-    border: 0;
-    outline: 0;
-    line-height: 1;
-    text-decoration: none;
-    font-size: 100%;
-    list-style: none;
-}
+    body .ui-panelmenu > a, span{
+        color: rgb(65, 58, 58);
+    }
+    body .ui-panelmenu h3.ui-panelmenu-header a {
+        padding: 0;
+        outline: 0 none;
+        vertical-align: middle;
+    }
+
+    body .ui-panelmenu h3.ui-panelmenu-header {
+        border: 1px solid #dee2e6;
+        background: #f8f9fa;
+        padding: 1rem;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    body .ui-panelmenu .ui-menuitem-link {
+        padding: 0.75rem 1rem;
+        transition: background-color .2s,color .2s,border-color .2s,box-shadow .2s,opacity .2s;
+    }
+
+    .ui-panelmenu .ui-menuitem-link {
+        display: block;
+        text-decoration: none;
+        font-weight: 400;
+        border: solid 1px transparent;
+        line-height: 10px;
+        cursor: pointer;
+        padding: 0.3em 0.3em 0.3em 2em;
+    }
+
+
+    body .ui-panelmenu .ui-panelmenu-content {
+        padding: 0.25rem 0;
+        background: #fff;
+        border: 1px solid #dee2e6;
+        margin-top: 0;
+        position: static;
+        border-top: 0 none;
+    }
+
+    body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link span {
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+
+    body .ui-panelmenu h3.ui-panelmenu-header span{
+        margin-right: 0.5rem;
+        font-weight: 700;
+    }
 </style>
