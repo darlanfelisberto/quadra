@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eb1ca655-15cc-4c4c-9bee-47572cef5863" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-back-end/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/quadra-back-end/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-back-end/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quadra-back-end/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-back-end/src/main/java/br/com/feliva/quadra/QuadraApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-back-end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/quadra-back-end/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-back-end/src/test/java/br/com/feliva/quadra/QuadraApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/quadra-front-end/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quadra-front-end/src/components/MenuLinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/quadra-front-end/src/components/MenuLinks.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2PNxQSdgQj2HAZ9PXOE38fAKgzK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb1ca655-15cc-4c4c-9bee-47572cef5863" name="Changes" comment="" />
+      <created>1683311324393</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683311324393</updated>
+      <workItem from="1683311325895" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

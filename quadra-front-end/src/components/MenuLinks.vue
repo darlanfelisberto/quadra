@@ -6,7 +6,7 @@
             <h3 class="ui-panelmenu-header">
                 <a href="#" class="ui-menuitem-link">
                     <span class="ui-menuitem-icon ui-icon pi pi-angle-down"></span>
-                    <span class="ui-menuitem-text">Option</span>
+                    <span class="ui-menuitem-text">Grupo</span>
                 </a>
             </h3>
             <div class="ui-panelmenu-content ">
@@ -14,19 +14,19 @@
                     <li >
                         <a class="ui-menuitem-link" href="#">
                             <span class="ui-menuitem-icon ui-icon pi pi-save"></span>
-                            <span class="ui-menuitem-text">Save (Non-Ajax)</span>
+                            <span class="ui-menuitem-text">Link 1</span>
                         </a>
                     </li>
                     <li >
                         <a class="ui-menuitem-link" href="#">
                             <span class="ui-menuitem-icon ui-icon pi pi-refresh"></span>
-                            <span class="ui-menuitem-text">Refresh</span>
+                            <span class="ui-menuitem-text">Link 2</span>
                         </a>
                     </li>
                     <li>
                         <a class="ui-menuitem-link ui-corner-all" href="#">
                             <span class="ui-menuitem-icon ui-icon pi pi-times"></span>
-                            <span class="ui-menuitem-text">Cancelar</span>
+                            <span class="ui-menuitem-text">Link 3</span>
                         </a>
                     </li>
                 </ul>
@@ -54,7 +54,7 @@
     }
 
     body .ui-panelmenu .ui-menuitem-link {
-        padding: 0.75rem 1rem;
+        padding: 0.75rem 0 0.75rem 2rem;
         transition: background-color .2s,color .2s,border-color .2s,box-shadow .2s,opacity .2s;
     }
 
@@ -65,7 +65,6 @@
         border: solid 1px transparent;
         line-height: 10px;
         cursor: pointer;
-        padding: 0.3em 0.3em 0.3em 2em;
     }
 
 
