@@ -23,7 +23,10 @@ public class UsuarioEndPoint {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response post(Usuario user){
+        System.out.println("Post");
+        System.out.println(user);
+
         usuarioDAO.merge(user);
-        return Response.ok(user).build();
+        return Response.ok().build();
     }
 }

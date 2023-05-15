@@ -1,0 +1,22 @@
+package br.com.feliva.dao;
+
+import br.com.feliva.models.Permissao;
+import br.com.feliva.models.Usuario;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.persistence.NoResultException;
+
+import java.util.List;
+
+@RequestScoped
+public class PermissaoDAO extends Dao<Permissao>{
+
+    public List<Permissao> listAll(){
+        try {
+            return this.em.createQuery("""
+                    select u from Permissao u 
+                """).getResultList();
+        }catch (NoResultException e){}
+
+        return null;
+    }
+}
