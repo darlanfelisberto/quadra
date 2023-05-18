@@ -13,10 +13,10 @@ public class UsuarioEndPoint {
     @Inject
     UsuarioDAO usuarioDAO;
 
-    @Path("/list")
+    @Path("/listAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response teste(){
+    public Response listAll(){
         return Response.ok(usuarioDAO.listAll()).build();
     }
     @POST

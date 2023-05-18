@@ -17,7 +17,8 @@ import { PickListModule } from 'primeng/picklist';
     FormsModule,
     SharedModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    PickListModule
   ],
   exports:[
     FormUserComponent

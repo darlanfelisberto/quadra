@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators,FormBuilder} from "@angular/forms";
 import {MessageValidationComponent} from "../../shared/message-validation/message-validation.component";
-import {Usuario} from "../Usuario";
+import {Usuario} from "../../model/Usuario";
 import { InputTextModule } from 'primeng/inputtext';
 import {UserService} from "../../service/user.service";
+import { PermissaoService } from 'src/app/service/permissao.service';
+import { Permissao } from 'src/app/model/Permissao';
 
 @Component({
   selector: 'app-form-user',
@@ -13,7 +15,10 @@ import {UserService} from "../../service/user.service";
 export class FormUserComponent implements OnInit{
   form!: FormGroup;
 
-  constructor(private userService:UserService) {
+  listPermissao!:Permissao[];
+  listPermiSele!:Permissao[];
+
+  constructor(private userService:UserService,private permService:PermissaoService) {
   }
   ngOnInit() {
       this.form = new FormGroup({
@@ -21,6 +26,7 @@ export class FormUserComponent implements OnInit{
         nome: new FormControl('',[Validators.required]),
         email: new FormControl('',[Validators.email,Validators.required,Validators.minLength(5)])
       });
+      this.permService.listAlla((resp)=>this.listPermissao = resp);
   }
 
   submit(){

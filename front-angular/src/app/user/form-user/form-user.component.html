@@ -18,6 +18,18 @@
       </div>
     </div>
     <p>Form Status: {{ form.status }}</p>
-      <p-pic
+
+    permissoes:
+    <span *ngFor="let t  of this.listPermissao">
+      {{t.nome}}
+    </span>
+
+    <p-pickList [source]="this.listPermissao" [target]="this.listPermiSele" sourceHeader="Available" targetHeader="Selected" [dragdrop]="true" [responsive]="true" 
+        [sourceStyle]="{ height: '30rem' }" [targetStyle]="{ height: '30rem' }" breakpoint="1400px">
+        <ng-template let-permissao pTemplate="item">
+           {{permissao.nome}}
+        </ng-template>
+    </p-pickList>
+
   </form>
 </div>

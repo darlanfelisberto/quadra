@@ -13,7 +13,7 @@ public class PermissaoDAO extends Dao<Permissao>{
     public List<Permissao> listAll(){
         try {
             return this.em.createQuery("""
-                    select u from Permissao u 
+                    select p from Permissao p 
                 """).getResultList();
         }catch (NoResultException e){}
 

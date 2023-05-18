@@ -1,6 +1,10 @@
 package br.com.feliva.models;
 
 
+import jakarta.xml.bind.annotation.XmlTransient;
+
+import java.util.UUID;
+
 public abstract class Model {
 
     protected boolean nova;
@@ -9,15 +13,17 @@ public abstract class Model {
         this.nova = true;
     }
 
-    abstract Integer getId();
+    @XmlTransient
+    public abstract Integer getId();
 
+    @XmlTransient
     public int hashCode() {
         if(getId() == null){
             return super.hashCode();
         }
         return getId().hashCode();
     }
-
+    @XmlTransient
     public boolean equals(Model model) {
         if(model == null){
             return false;

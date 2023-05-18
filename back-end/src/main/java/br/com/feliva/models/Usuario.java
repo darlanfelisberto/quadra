@@ -16,16 +16,16 @@ public class Usuario extends  Model{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
-    Integer idUsuario;
-    String username;
-    String password;
-    String salt;
-    String nome;
-    String email;
+    public Integer idUsuario;
+    public String username;
+    public String password;
+    public String salt;
+    public String nome;
+    public String email;
 
     @ManyToMany(mappedBy = "listUsuarios")
-    Set<Permissao> listPermissoes;
-    Integer getId() {
+    public Set<Permissao> listPermissoes;
+    public Integer getId() {
         return this.idUsuario;
    }
 }
