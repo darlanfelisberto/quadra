@@ -20,12 +20,7 @@ public class Permissao extends  Model{
     private String nome;
 
     @JsonbTransient
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "usaurio_permissoes",
-            joinColumns =  @JoinColumn(name= "id_permissao"),
-            inverseJoinColumns = @JoinColumn(name = "id_usuario")
-    )
+    @ManyToMany(mappedBy = "listPermissoes")
     private Set<Usuario> listUsuarios;
 
     public Integer getId() {

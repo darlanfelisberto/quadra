@@ -4,4 +4,5 @@ export class Usuario{
   password!:string;
   username!:string;
   email!:string;
+  listPermissoes:[] = [];
 }

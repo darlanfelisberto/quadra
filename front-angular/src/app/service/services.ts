@@ -25,7 +25,7 @@ export abstract class Services<T>{
 
   public save(obj:T): void{
     const headers = { 'content-type': 'application/json'}
-
+    console.log(JSON.stringify(obj));
     this.http.post(this.serverUrl + this.getPath(),JSON.stringify(obj),{'headers':headers}).subscribe(result => console.log(result));
   }
 

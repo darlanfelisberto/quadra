@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-main',
   template: `
-    <app-form-user/>
+    <router-outlet></router-outlet>
   `,
   styles: [`
     app-main{

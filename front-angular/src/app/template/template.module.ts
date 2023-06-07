@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
 import {UserModule} from "../user/user.module";
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import {UserModule} from "../user/user.module";
   ],
   imports: [
     CommonModule,
-    UserModule
+    UserModule,
+    AppRoutingModule
   ],
   exports:[
     HeaderComponent,

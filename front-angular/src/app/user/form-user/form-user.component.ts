@@ -6,40 +6,47 @@ import { InputTextModule } from 'primeng/inputtext';
 import {UserService} from "../../service/user.service";
 import { PermissaoService } from 'src/app/service/permissao.service';
 import { Permissao } from 'src/app/model/Permissao';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-form-user',
   templateUrl: './form-user.component.html',
-  styleUrls: ['./form-user.component.scss']
+  styleUrls: ['./form-user.component.scss'],
+  providers: [MessageService]
 })
 export class FormUserComponent implements OnInit{
   form!: FormGroup;
 
+  teste?:any;
   listPermissao!:Permissao[];
-  listPermiSele!:Permissao[];
+  user: Usuario = new Usuario();
 
-  constructor(private userService:UserService,private permService:PermissaoService) {
+  constructor(private userService:UserService,private permService:PermissaoService,private messageService:MessageService) {
   }
   ngOnInit() {
       this.form = new FormGroup({
         // username:new FormControl('',[Validators.required]),
         nome: new FormControl('',[Validators.required]),
-        email: new FormControl('',[Validators.email,Validators.required,Validators.minLength(5)])
+        email: new FormControl('',[Validators.email,Validators.required,Validators.minLength(5)]),
+        password: new FormControl('',[Validators.required]),
       });
       this.permService.listAlla((resp)=>this.listPermissao = resp);
   }
 
   submit(){
-    console.log(this.form);
+    console.log(this.user.listPermissoes);
     if(!this.form.valid){
       return;
     }
-    let user: Usuario = new Usuario();
-    user.idUsuario = 1;
-    user.nome = this.form.value.nome;
-    user.email = this.form.value.email;
 
-    this.userService.save(user);
+    if(this.user.listPermissoes.length ==0){
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Selecione Uma Permissão' });
+      return;
+    }
+    
+    // this.user.idUsuario = 1;
+
+    this.userService.save(this.user);
     return;
   }
 

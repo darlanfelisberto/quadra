@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -13,15 +14,15 @@ import { Component } from '@angular/core';
       <div class="ui-panelmenu-content ">
         <ul class="ui-menu-list">
           <li >
-            <a class="ui-menuitem-link" href="#">
+            <a class="ui-menuitem-link" routerLink="/usuarios/busca">
               <span class="ui-menuitem-icon ui-icon pi pi-save"></span>
-              <span class="ui-menuitem-text">Link 1</span>
+              <span class="ui-menuitem-text">Usuarios</span>
             </a>
           </li>
           <li >
-            <a class="ui-menuitem-link" href="#">
+            <a class="ui-menuitem-link" routerLink="/usuarios/form">
               <span class="ui-menuitem-icon ui-icon pi pi-refresh"></span>
-              <span class="ui-menuitem-text">Link 2</span>
+              <span class="ui-menuitem-text">User form</span>
             </a>
           </li>
           <li>

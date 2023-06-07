@@ -6,10 +6,18 @@ import {SharedModule} from "../shared/shared.module";
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import { PickListModule } from 'primeng/picklist';
+import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
+import { UserBuscaComponent } from './user-busca/user-busca.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputMaskModule } from 'primeng/inputmask';
+import { CalendarModule } from 'primeng/calendar';
+
 
 @NgModule({
   declarations: [
-    FormUserComponent
+    FormUserComponent,
+    UserBuscaComponent
   ],
   imports: [
     CommonModule,
@@ -18,10 +26,16 @@ import { PickListModule } from 'primeng/picklist';
     SharedModule,
     InputTextModule,
     ButtonModule,
-    PickListModule
+    PickListModule,
+    PasswordModule,
+    ToastModule,
+    RadioButtonModule,
+    InputMaskModule,
+    CalendarModule
   ],
   exports:[
-    FormUserComponent
+    FormUserComponent,
+    UserBuscaComponent
   ]
 })
 export class UserModule { }

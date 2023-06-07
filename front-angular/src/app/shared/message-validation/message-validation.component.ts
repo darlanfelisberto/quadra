@@ -3,8 +3,15 @@ import {FormGroup, ValidationErrors} from "@angular/forms";
 
 @Component({
   selector: 'app-message-validation',
-  templateUrl: './message-validation.component.html',
-  styleUrls: ['./message-validation.component.scss']
+  template: `
+    <ng-content></ng-content>
+    <div *ngIf="hasError()" style="color: red;width: initial;" class="flex flex-column pt-2">
+      <small class="pb-1" *ngFor="let err of message()" >{{err}}</small>
+    </div>
+  `,
+  styles: [`
+    
+  `]
 })
 export class MessageValidationComponent {
 
