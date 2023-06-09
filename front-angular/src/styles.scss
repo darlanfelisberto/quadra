@@ -9,12 +9,16 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-//correção password para usar todo o espaço da grid
-.p-password{
-    display: block !important;
-}
+// //correção password para usar todo o espaço da grid
+// .p-password{
+//     display: block !important;
+// }
 
-//correção password para usar todo o espaço da grid
-.p-password .p-inputtext{
+// //correção password para usar todo o espaço da grid
+// .p-password .p-inputtext{
+//     width: 100%;
+// }
+.p-element input{
+    display: block;
     width: 100%;
 }

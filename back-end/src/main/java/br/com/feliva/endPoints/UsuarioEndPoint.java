@@ -7,6 +7,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.List;
+
 @Path("/usuario")
 public class UsuarioEndPoint {
 
@@ -19,6 +21,7 @@ public class UsuarioEndPoint {
     public Response listAll(){
         return Response.ok(usuarioDAO.listAll()).build();
     }
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -28,5 +31,14 @@ public class UsuarioEndPoint {
 
         usuarioDAO.merge(user);
         return Response.ok().build();
+    }
+
+    @POST
+    @Path("/findByName")
+    @Produces(MediaType.APPLICATION_JSON)
+//    @Consumes(MediaType.APPLICATION_FORM_URLENCODED) não precisa desse
+    public Response findByName(@FormParam("nome") String nome){
+        List<Usuario> l = usuarioDAO.findByName(nome);
+        return Response.ok(l).build();
     }
 }

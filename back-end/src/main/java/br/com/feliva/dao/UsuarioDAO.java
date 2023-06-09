@@ -7,6 +7,7 @@ import jakarta.persistence.NoResultException;
 import java.util.List;
 
 @RequestScoped
+@SuppressWarnings("unchecked")
 public class UsuarioDAO extends Dao<Usuario>{
 
     public Usuario findUsuarioByUsername(String username){
@@ -15,17 +16,24 @@ public class UsuarioDAO extends Dao<Usuario>{
                     select u from Usuario u where u.username = :username
                 """).setParameter("username",username)
                     .getSingleResult();
-        }catch (NoResultException e){}
-
-        return null;
+        }catch (NoResultException e){
+            return null;
+        }
     }
+
     public List<Usuario> listAll(){
         try {
             return this.em.createQuery("""
-                    select u from Usuario u 
-                """).getResultList();
-        }catch (NoResultException e){}
+                        select u from Usuario u
+                    """).getResultList();
+        }catch (NoResultException e){
+            return null;
+        }
+    }
 
-        return null;
+    public List<Usuario> findByName(String nome){
+        return this.em.createQuery("""
+            from  Usuario u where u.nome ilike :nome
+        """).setParameter("nome","%" + nome + "%").getResultList();
     }
 }

@@ -12,6 +12,8 @@ import { UserBuscaComponent } from './user-busca/user-busca.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CalendarModule } from 'primeng/calendar';
+import { PanelModule } from 'primeng/panel';
+
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { CalendarModule } from 'primeng/calendar';
     ToastModule,
     RadioButtonModule,
     InputMaskModule,
-    CalendarModule
+    CalendarModule,
+    PanelModule
   ],
   exports:[
     FormUserComponent,
