@@ -10,6 +10,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { CalendarModule } from 'primeng/calendar';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { TableModule } from 'primeng/table';
     PanelModule,
     ToastModule,
     TableModule,
-  ]
+  ],
+  providers:[MessageService]
 })
 export class PrimeNGAppUse { }

@@ -9,6 +9,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {InputTextModule} from "primeng/inputtext";
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { UsModule } from './us/us.module';
+import { PrimeNGAppUse } from './prime-ng-app-use.module';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,14 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     TemplateModule,
     UserModule,
+    UsModule,
+    UserModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     InputTextModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    PrimeNGAppUse
   ],
   providers: [],
   exports: [

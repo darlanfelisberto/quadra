@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
+  <p-toast></p-toast>
     <div class="container">
       <app-header class="header height-size-he-foo"/>
       <main>

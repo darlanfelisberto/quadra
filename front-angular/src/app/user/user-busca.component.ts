@@ -3,18 +3,20 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import {UserService} from '../service/user.service'
 import { Usuario } from 'src/app/model/Usuario';
+import { MessageService } from 'primeng/api';
 
 
 @Component({
-  selector: 'app-us-busca',
+  selector: 'app-user-busca',
   template: `
+    
       <p-panel header="Busca de Usuários">
       <form></form>
       <div class="formgrid grid">
         <div class="field col-12 md:col-12">
           <div class="flex flex-wrap gap-3">
             <div class="flex align-items-center">
-              <p-radioButton  value="0" [(ngModel)]="this.tipoBusca"></p-radioButton>
+              <p-radioButton  value="0" [(ngModel)]="this.tipoBusca" required minlength="4"></p-radioButton>
               <label class="ml-2">Nome</label>
             </div>
             
@@ -45,16 +47,20 @@ import { Usuario } from 'src/app/model/Usuario';
     }
   `]
 })
-export class UsBuscaComponent {
-  tipoBusca:number = 0;
+export class UserBuscaComponent {
+  public static readonly BUSCA_NOME = 0;
+  public static readonly BUSCA_CPF = 1;
+
+  tipoBusca:number=0;
   busca:string='';
+
 
   rendTelaBusca = true;
   rendTelaLista = false;
 
   listUsuarios:Usuario[] = [];
 
-  constructor(private userService:UserService,private router: Router,private activatedRoute: ActivatedRoute ){
+  constructor(private userService:UserService,private router: Router,private activatedRoute: ActivatedRoute,private messageService:MessageService ){
     // this.activatedRoute.
     // this.telaBusca();
     // this.inicializaTeste();
@@ -66,19 +72,26 @@ export class UsBuscaComponent {
   }
 
   public buscar():void{
-    if(this.tipoBusca == 0){
-      console.log(this.busca)
-      this.userService.findByName(this.busca,((resp)=> this.listUsuarios = resp));
-      console.log(this.listUsuarios);
+    switch(this.tipoBusca){
+      case UserBuscaComponent.BUSCA_NOME:
+        if(this.busca == null || this.busca.length <3){
+          this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Informe pelo menos 3 caracteres.' });
+          return;
+        }
+        this.userService.findByName(this.busca,((resp)=> this.listUsuarios = resp));
+        
+        break
     }
+    
+    //this.router.navigate(['../listar'], { relativeTo: this.activatedRoute });
 
-    if(this.listUsuarios != null && this.listUsuarios.length > 0){
-      // this.telaLista();
-      // this.router.navigate([`usuarios/list/${this.busca}`]);
-      // this.router.navigate(['../list',this.busca], { relativeTo: this.activatedRoute });
-    }else{
+    // if(this.listUsuarios != null && this.listUsuarios.length > 0){
+    //   // this.telaLista();
+    //   // this.router.navigate([`usuarios/list/${this.busca}`]);
+    //   this.router.navigate(['./list'], { relativeTo: this.activatedRoute });
+    // }else{
       
-    }
+    // }
   }
 
   // public telaBusca(){

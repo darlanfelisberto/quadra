@@ -1,44 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormUserComponent } from './form-user/form-user.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RouterModule } from '@angular/router';
+
+import { FormUserComponent } from './form-user.component';
 import {SharedModule} from "../shared/shared.module";
-import {InputTextModule} from "primeng/inputtext";
-import {ButtonModule} from "primeng/button";
-import { PickListModule } from 'primeng/picklist';
-import { PasswordModule } from 'primeng/password';
-import { ToastModule } from 'primeng/toast';
-import { UserBuscaComponent } from './user-busca/user-busca.component';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { InputMaskModule } from 'primeng/inputmask';
-import { CalendarModule } from 'primeng/calendar';
-import { PanelModule } from 'primeng/panel';
+import { PrimeNGAppUse } from '../prime-ng-app-use.module';
+import { UserBuscaComponent } from './user-busca.component';
+import { ListUsuarioComponent } from './list-usuario.component';
+import { UserControlComponent } from './user.control.component';
+import { UserRoutingModule } from './user-routing.module';
 
 
 
 @NgModule({
   declarations: [
     FormUserComponent,
-    UserBuscaComponent
+    UserBuscaComponent,
+    ListUsuarioComponent,
+    UserControlComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    InputTextModule,
-    ButtonModule,
-    PickListModule,
-    PasswordModule,
-    ToastModule,
-    RadioButtonModule,
-    InputMaskModule,
-    CalendarModule,
-    PanelModule
+    PrimeNGAppUse,
+    RouterModule,
+    UserRoutingModule
   ],
   exports:[
-    FormUserComponent,
-    UserBuscaComponent
-  ]
+  ],
 })
 export class UserModule { }

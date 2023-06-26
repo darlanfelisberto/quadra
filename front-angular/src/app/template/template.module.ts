@@ -5,6 +5,8 @@ import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
 import {UserModule} from "../user/user.module";
 import { AppRoutingModule } from '../app-routing.module';
+import { PrimeNGAppUse } from '../prime-ng-app-use.module';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -17,7 +19,8 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     UserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PrimeNGAppUse
   ],
   exports:[
     HeaderComponent,
