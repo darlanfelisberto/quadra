@@ -6,8 +6,9 @@ import { UsControlComponent } from './us-control.component';
 import { UsBuscaComponent } from './us-busca.component';
 
 const routes: Routes = [
-    { path: '', component: UsControlComponent },
+  { path: '', component: UsControlComponent },
   { path: 'buscar', component: UsBuscaComponent },
+  { path: 'buscar/:busca', component: UsBuscaComponent },
   { path: 'listar', component: ListUsuarioComponent},
   { path: 'edit/:id', component: FormUserComponent}
 ];
