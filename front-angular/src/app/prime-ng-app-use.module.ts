@@ -11,6 +11,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { MessageService } from 'primeng/api';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MessageService } from 'primeng/api';
     PanelModule,
     ToastModule,
     TableModule,
+    BreadcrumbModule
   ],
   providers:[MessageService]
 })

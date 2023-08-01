@@ -10,6 +10,7 @@ import { UserBuscaComponent } from './user-busca.component';
 import { ListUsuarioComponent } from './list-usuario.component';
 import { UserControlComponent } from './user.control.component';
 import { UserRoutingModule } from './user-routing.module';
+import { BreadcrumbComponent } from '../shared/breadcrumb.component';
 
 
 
@@ -18,7 +19,7 @@ import { UserRoutingModule } from './user-routing.module';
     FormUserComponent,
     UserBuscaComponent,
     ListUsuarioComponent,
-    UserControlComponent
+    UserControlComponent,
   ],
   imports: [
     CommonModule,

@@ -1,10 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Usuario } from 'src/app/model/Usuario';
+import {BreadcrumbService} from "../service/breadcrumb.service";
 
 @Component({
   selector: 'app-list-usuarios',
   template: `
+
     <p-panel header="Lista de Usuários">
       <p-table [value]="this.listUsuarios">
         <ng-template pTemplate="caption">
@@ -23,7 +25,7 @@ import { Usuario } from 'src/app/model/Usuario';
             <td>{{usuario.username}}</td>
             <td>{{usuario.email}}</td>
             <td>
-              <p-button (click)="onEditUsuario(usuario)">teste</p-button>            
+              <a  routerLink="../edit/1" (click)="onEditUsuario(usuario)">teste</a>
             </td>
           </tr>
       </ng-template>
@@ -36,11 +38,16 @@ import { Usuario } from 'src/app/model/Usuario';
   providers: [MessageService]
 })
 export class ListUsuarioComponent implements OnInit{
-  
+
   @Input() listUsuarios:Usuario[] = [];
-  
+
+  constructor(private breadCrumService:BreadcrumbService) {
+  }
+
   ngOnInit(): void {
-  
+    this.breadCrumService.add();
+    console.log("init lis")
+    console.log(this.breadCrumService.mm)
   }
 
   onEditUsuario(usuario:Usuario){

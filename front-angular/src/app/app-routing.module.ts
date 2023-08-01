@@ -6,17 +6,18 @@ import { ListUsuarioComponent } from './user/list-usuario.component';
 import { UserControlComponent } from './user/user.control.component';
 
 const routes: Routes = [
-  {path:'user',
-    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
-  },
-
-  { path: 'usuarios/busca', component: UserBuscaComponent },
-  { path: 'usuarios/form', component: FormUserComponent },
-  { path: 'usuarios/list/:busca', component: ListUsuarioComponent },
-
   { path: 'us',
     loadChildren: () => import('./us/us.module').then(m => m.UsModule)
   },
+  {path:'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    data:{
+      teste:'teste'
+    }
+  },
+  { path: 'usuarios/busca', component: UserBuscaComponent },
+  { path: 'usuarios/form', component: FormUserComponent },
+  { path: 'usuarios/list/:busca', component: ListUsuarioComponent },
 ];
 
 @NgModule({

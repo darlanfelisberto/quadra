@@ -2,19 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ReactMessageValidationComponent} from "./message-validation/react-message-validation.component";
 import {TemplateMessageValidationComponent} from "./message-validation/template-message-validation.component";
+import { BreadcrumbComponent } from './breadcrumb.component';
+import { PrimeNGAppUse } from '../prime-ng-app-use.module';
 
 
 @NgModule({
   declarations: [
     ReactMessageValidationComponent,
-    TemplateMessageValidationComponent
+    TemplateMessageValidationComponent,
+    BreadcrumbComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrimeNGAppUse
   ],
   exports:[
     ReactMessageValidationComponent,
-    TemplateMessageValidationComponent
+    TemplateMessageValidationComponent,
+    BreadcrumbComponent
   ]
 })
 export class SharedModule { }

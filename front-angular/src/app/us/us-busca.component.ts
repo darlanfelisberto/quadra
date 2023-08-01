@@ -9,7 +9,7 @@ import { Usuario } from 'src/app/model/Usuario';
   selector: 'app-us-busca',
   template: `
     <div *ngIf="this.isRendTelaBusca()">
-      <p-panel header="Busca de Usuários">
+      <p-panel header="Busca de Usuários us">
         <div class="formgrid grid">
           <div class="field col-12 md:col-12">
             <div class="flex flex-wrap gap-3">
@@ -17,7 +17,7 @@ import { Usuario } from 'src/app/model/Usuario';
                 <p-radioButton  value="0" [(ngModel)]="this.tipoBusca"></p-radioButton>
                 <label class="ml-2">Nome</label>
               </div>
-              
+
               <div class="flex align-items-center">
                 <p-radioButton  value="1" [(ngModel)]="this.tipoBusca"></p-radioButton>
                 <label class="ml-2">CPF</label>
@@ -25,10 +25,10 @@ import { Usuario } from 'src/app/model/Usuario';
             </div>
           </div>
             <div class="field col-12 md:col-6">
-              
+
                 <p-inputMask mask="999.999.999-99" name="sdas" [(ngModel)]="this.busca"   placeholder="999.999.999-99" *ngIf="this.tipoBusca == 1" class="w-full" ></p-inputMask>
                 <input type="text" pInputText [(ngModel)]="this.busca" *ngIf="this.tipoBusca == 0" placeholder="Nome" class="w-full"/>
-              
+
             </div>
         </div>
         <div>
@@ -38,7 +38,8 @@ import { Usuario } from 'src/app/model/Usuario';
       </p-panel>
     </div><!-- fim busca -->
     <div>
-      <p-panel header="Lista de Usuários">
+
+      <p-panel header="Lista de Usuários do buscar">
         <p-table [value]="this.listUsuarios">
           <ng-template pTemplate="caption">
             Lista de Usuários
@@ -56,7 +57,7 @@ import { Usuario } from 'src/app/model/Usuario';
               <td>{{usuario.username}}</td>
               <td>{{usuario.email}}</td>
               <td>
-                <p-button (click)="onEditUsuario(usuario)">teste</p-button>            
+
               </td>
             </tr>
         </ng-template>
@@ -101,7 +102,7 @@ export class UsBuscaComponent implements OnInit{
   }
 
   public buscarRedirect(){
-    this.router.navigate(['../',this.busca], { relativeTo: this.activatedRoute });
+    this.router.navigate(['../listar',this.busca], { relativeTo: this.activatedRoute });
   }
 
   public buscar():void{
@@ -116,7 +117,7 @@ export class UsBuscaComponent implements OnInit{
       // this.router.navigate([`usuarios/list/${this.busca}`]);
       // this.router.navigate(['../list',this.busca], { relativeTo: this.activatedRoute });
     }else{
-      
+
     }
   }
 
