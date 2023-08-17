@@ -26,3 +26,18 @@ body {
     display: block;
     width: 100%;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ui-panelmenu li{
+  list-style-type: none;
+}
+.ui-panelmenu a{
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(65, 58, 58);
+}
+
+.ui-menu-list{
+  padding: 0;
+}

@@ -1,40 +1,41 @@
-import {
-  AfterContentChecked,
-  AfterContentInit, AfterViewChecked,
-  AfterViewInit,
-  Component,
-  DoCheck,
-  OnChanges,
-  OnDestroy
-} from '@angular/core';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-import {UserService} from '../service/user.service'
-import { Usuario } from 'src/app/model/Usuario';
-import { MessageService } from 'primeng/api';
-
-import {OnInit} from '@angular/core';
-import {MenuItem} from 'primeng/api';
-import {NavigationEnd,RouterEvent} from '@angular/router';
-import {filter} from 'rxjs/operators';
-import { BreadcrumbService } from '../service/breadcrumb.service';
-import {BreadMenuItem} from "../user/breadcrumb.menuitem";
+import {Component} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BreadcrumbService} from './breadcrumb.service';
+import {BreadMenuItem} from "./breadcrumb.menuitem";
 
 @Component({
   selector: 'app-breadcrumb',
   template: `
-    <p *ngFor="let item of this.getMenuItens()">
-      {{item.label}}>
-    </p>
-      <p-breadcrumb [model]="this.getMenuItens()" *ngIf="this.getMenuItens()"></p-breadcrumb>
+
+    <div class="ui-panelmenu">
+      <div class="p-element max-w-full">
+        <div class="p-breadcrumb p-component">
+          <ul class="p-breadcrumb-list" >
+            <li *ngFor="let item of this.getMenuItens()" class="p-element p-breadcrumb-home ng-star-inserted {{item.styleClass}}">
+              <a class="{{item.icon}}" href="{{item.url}}">{{item.label}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   `,
-  styles: [
-  ]
+  styles: [`
+    .p-breadcrumb .p-breadcrumb-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+
+  `]
 })
 export class BreadcrumbComponent {//implements OnInit,OnDestroy,OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
-  static readonly ROUTE_DATA_BREADCRUMB = 'breadcrumb';
-  readonly home = {icon: 'pi pi-home', url: ''};
-  menuItems: MenuItem[] = [];
+
+  menuItems: BreadMenuItem[] = [];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,private breadService:BreadcrumbService) {}
 
@@ -48,9 +49,9 @@ export class BreadcrumbComponent {//implements OnInit,OnDestroy,OnChanges,DoChec
   // }
 
   public getMenuItens(){
-    this.breadService.menuitem.subscribe(item => this.menuItems = item);
+    // this.breadService.menuitem.subscribe(item => this.menuItems = item);
     console.log("getMenuItens")
-    return this.menuItems;
+    return this.breadService.mm;//this.menuItems;
   }
   //
   // ngOnDestroy(){

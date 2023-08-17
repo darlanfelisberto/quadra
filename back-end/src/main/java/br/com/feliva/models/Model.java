@@ -3,8 +3,6 @@ package br.com.feliva.models;
 
 import jakarta.xml.bind.annotation.XmlTransient;
 
-import java.util.UUID;
-
 public abstract class Model {
 
     protected boolean nova;

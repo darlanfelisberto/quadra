@@ -41,4 +41,12 @@ public class UsuarioEndPoint {
         List<Usuario> l = usuarioDAO.findByName(nome);
         return Response.ok(l).build();
     }
+
+    @GET
+    @Path("/findById/{idUsuario}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findById(@PathParam("idUsuario") Long idUsuario){
+        Usuario u = usuarioDAO.findById(idUsuario);
+        return Response.ok(u).build();
+    }
 }

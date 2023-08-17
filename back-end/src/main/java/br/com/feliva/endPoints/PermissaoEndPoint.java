@@ -1,11 +1,11 @@
 package br.com.feliva.endPoints;
 
 import br.com.feliva.dao.PermissaoDAO;
-import br.com.feliva.dao.UsuarioDAO;
 import br.com.feliva.models.Permissao;
-import br.com.feliva.models.Usuario;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 

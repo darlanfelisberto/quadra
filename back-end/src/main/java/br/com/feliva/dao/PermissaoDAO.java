@@ -1,7 +1,6 @@
 package br.com.feliva.dao;
 
 import br.com.feliva.models.Permissao;
-import br.com.feliva.models.Usuario;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.NoResultException;
 
