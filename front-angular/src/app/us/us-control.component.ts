@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-us-control',
@@ -20,18 +20,18 @@ export class UsControlComponent {
   telaBuscar(){
     this.renderBuscar = true;
     this.renderListar = false;
-    this.renderForm = false;    
+    this.renderForm = false;
   }
 
   telaListar(){
     this.renderBuscar = false;
     this.renderListar = true;
-    this.renderForm = false;    
+    this.renderForm = false;
   }
 
   telaForm(){
     this.renderBuscar = false;
     this.renderListar = false;
-    this.renderForm = true;    
+    this.renderForm = true;
   }
 }

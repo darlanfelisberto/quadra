@@ -1,1 +1,1 @@
-# quadra repositorio para estudos
+# quadra repositorio para estudos angular/quarkus
