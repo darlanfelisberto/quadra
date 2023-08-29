@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
 import {BreadcrumbService} from "../components/breadcrumb/breadcrumb.service";
-import {BreadMenuItem} from "../components/breadcrumb/breadcrumb.menuitem";
+import {BreadMenuItem} from "../components/breadcrumb/BreadcrumbMenuItem.class";
 import {ConstantesUtil, TipoBusca} from "../util/constantes.util";
 
 
@@ -34,7 +34,7 @@ import {ConstantesUtil, TipoBusca} from "../util/constantes.util";
       </div>
       <div>
         <p-button label="Buscar" (click)="this.buscar()" icon="pi pi-search" class="pr-3"></p-button>
-        <p-button label="Novo" (click)="this.buscar()" icon="pi pi-plus"></p-button>
+        <p-button label="Novo" routerLink="/user/novo" icon="pi pi-plus"></p-button>
       </div>
     </p-panel>
   `,

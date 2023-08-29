@@ -4,7 +4,7 @@ import {UserBuscaComponent} from "./user-busca.component";
 import {BreadcrumbService} from "../components/breadcrumb/breadcrumb.service";
 import {UserControlComponent} from "./user.control.component";
 import {UserListComponent} from "./user-list.component";
-import {BreadMenuItem} from "../components/breadcrumb/breadcrumb.menuitem";
+import {BreadMenuItem} from "../components/breadcrumb/BreadcrumbMenuItem.class";
 import {UserFormComponent} from "./user-form.component";
 
 
@@ -12,6 +12,7 @@ export const USER_MENU:BreadMenuItem            = new BreadMenuItem(/*root route
 export const USER_MENU_BUSCA:BreadMenuItem      = new BreadMenuItem('buscar','Buscar Usuários',1,0).createRoute({component:UserBuscaComponent,canActivate:[BreadcrumbService.GUARD_CAN_ACTIVATE]})
 export const USER_MENU_LISTAR:BreadMenuItem     = new BreadMenuItem('listar/:tipo/:busca','Lista de Usuários',2,1).createRoute({component:UserListComponent,canActivate:[BreadcrumbService.GUARD_CAN_ACTIVATE]})
 export const USER_FORM_EDIT:BreadMenuItem       = new BreadMenuItem('editar/:idUsuario','Editar Usuário',3,1).createRoute({component:UserFormComponent,canActivate:[BreadcrumbService.GUARD_CAN_ACTIVATE]})
+export const USER_FORM_NOVO:BreadMenuItem       = new BreadMenuItem('novo','Novo Usuário',4,0).createRoute({component:UserFormComponent,canActivate:[BreadcrumbService.GUARD_CAN_ACTIVATE]})
 
 export const USER_BREAD_ITEM:BreadMenuItem[] = [
   USER_MENU,
@@ -23,7 +24,8 @@ export const USER_BREAD_ITEM:BreadMenuItem[] = [
 USER_MENU.getRoute().children = [
   USER_MENU_BUSCA.getRoute(),
   USER_MENU_LISTAR.getRoute(),
-  USER_FORM_EDIT.getRoute()
+  USER_FORM_EDIT.getRoute(),
+  USER_FORM_NOVO.getRoute()
 ]
 
 console.log(USER_MENU);

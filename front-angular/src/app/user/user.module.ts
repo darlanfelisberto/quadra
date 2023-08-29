@@ -10,6 +10,7 @@ import {UserBuscaComponent} from './user-busca.component';
 import {UserListComponent} from './user-list.component';
 import {UserControlComponent} from './user.control.component';
 import {UserRoutingModule} from './user-routing.module';
+import {ComponentsModule} from '../components/components.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {UserRoutingModule} from './user-routing.module';
     PrimeNGAppUse,
     SharedModule,
     RouterModule,
-    UserRoutingModule
+    UserRoutingModule,
+    ComponentsModule
   ],
   exports:[
   ],

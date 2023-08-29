@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ReactMessageValidationComponent} from "./message-validation/react-message-validation.component";
 import {TemplateMessageValidationComponent} from "./message-validation/template-message-validation.component";
-import {BreadcrumbComponent} from '../components/breadcrumb/breadcrumb.component';
 import {PrimeNGAppUse} from '../prime-ng-app-use.module';
 
 
@@ -10,7 +9,7 @@ import {PrimeNGAppUse} from '../prime-ng-app-use.module';
   declarations: [
     ReactMessageValidationComponent,
     TemplateMessageValidationComponent,
-    BreadcrumbComponent,
+
   ],
   imports: [
     CommonModule,
@@ -19,7 +18,6 @@ import {PrimeNGAppUse} from '../prime-ng-app-use.module';
   exports:[
     ReactMessageValidationComponent,
     TemplateMessageValidationComponent,
-    BreadcrumbComponent
   ]
 })
 export class SharedModule { }

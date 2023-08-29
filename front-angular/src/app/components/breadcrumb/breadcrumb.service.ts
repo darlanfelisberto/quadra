@@ -1,14 +1,12 @@
 import {inject, Injectable} from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot} from '@angular/router';
-import {BreadMenuItem} from './breadcrumb.menuitem';
+import {ActivatedRoute, ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot} from '@angular/router';
+import {BreadMenuItem} from './BreadcrumbMenuItem.class';
 
 
 @Injectable({providedIn:'root'})
 export class BreadcrumbService{
 
-  mm:BreadMenuItem[]=[BreadMenuItem.HOME];
-  // menuitem:Observable<BreadMenuItem[]> = of(this.mm);
-  index:number = 0;
+  mm:BreadMenuItem[] = BreadMenuItem.inicializaBreadcrumbList();
 
   static GUARD_CAN_ACTIVATE: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
     // console.log(route)
@@ -18,13 +16,36 @@ export class BreadcrumbService{
     return inject(BreadcrumbService).addItem(item);
   };
 
-  constructor() {
+  constructor(private router: Router,
+    private activatedRoute: ActivatedRoute) {
   }
 
   addItem(bread:BreadMenuItem):boolean{
+    if(bread.index == undefined){
+      throw Error("Item do breadcrumd devem ter o seu index preenchidos.");
+    }
+
+    if(bread.index <= 1 ){//se for os primeiros componente, reinicia dos bradcrumbs
+      this.mm = BreadMenuItem.inicializaBreadcrumbList();
+    }
+
     this.mm.push(BreadMenuItem.SEPARATOR);
     this.mm.push(bread);
     return true;
+  }
+
+  public navigate(item:BreadMenuItem){
+    let sub:BreadMenuItem[] = [];
+    for (let element of this.mm) {
+      if(element.url != item.url){
+        sub.push(element);
+      }else{
+        break;
+      }
+    }
+    sub.pop();//retira o ultimo separador
+    this.mm = sub;
+    this.router.navigate([item.url], { relativeTo: this.activatedRoute });
   }
 
   private getLastRoute(activeRoute:ActivatedRoute):ActivatedRouteSnapshot {

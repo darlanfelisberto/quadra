@@ -34,6 +34,7 @@ export class BreadMenuItem{
     }
     return this.route;
   }
+
   static createSeparator():BreadMenuItem{
     let bread = new BreadMenuItem('#','>',-2,-2);
     bread.styleClass = 'p-menuitem-separator';
@@ -45,6 +46,10 @@ export class BreadMenuItem{
     let bread = new BreadMenuItem('#','',-2,-2);
     bread.icon = 'pi pi-home';
     return bread;
+  }
+
+  static inicializaBreadcrumbList() :BreadMenuItem[]{
+    return [BreadMenuItem.HOME];
   }
 }
 

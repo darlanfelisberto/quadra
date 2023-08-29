@@ -17,7 +17,7 @@ import {ConfirmPopupModule} from 'primeng/confirmpopup';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports:[
     InputTextModule,

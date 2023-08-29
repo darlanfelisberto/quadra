@@ -6,12 +6,13 @@ import {PermissaoService} from 'src/app/service/permissao.service';
 import {Permissao} from 'src/app/model/Permissao';
 import {MessageService} from 'primeng/api';
 import {ActivatedRoute, Router} from "@angular/router";
+import {ShowMessageService} from '../components/show-message/show-message.service';
 
 @Component({
   selector: 'app-form-user',
   template: `
     <div>
-      <p-toast life="200000" ></p-toast>
+      <p-toast life="200000"  ></p-toast>
       <p-panel header="Dados usuário">
         <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off">
           <div class="card">
@@ -65,7 +66,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class UserFormComponent implements OnInit {
   form!: FormGroup;
 
-  teste?: any;
   listPermissao?: Permissao[];
   user: Usuario = new Usuario();
 
@@ -73,28 +73,27 @@ export class UserFormComponent implements OnInit {
               private activateRoute: ActivatedRoute,
               private userService: UserService,
               private permService: PermissaoService,
-              private messageService: MessageService) {
+              private messageService: MessageService,
+              private showMessageService:ShowMessageService) {
 
   }
 
   ngOnInit() {
     let idUser = this.activateRoute.snapshot.params['idUsuario'];
-    this.userService.findById(idUser, (response) => {
-      this.user = response
-    })
-    this.form = new FormGroup({
-      // username:new FormControl('',[Validators.required]),
-      nome: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.email, Validators.required, Validators.minLength(5)]),
-      password: new FormControl('', [Validators.required]),
-    });
+    if(idUser !== undefined){
+      this.userService.findById(idUser, (response) => {
+        this.user = response
+      })
+    }
+
+    //remove permissoes já add ao usuario
     this.permService.listAlla((resp) => {
       this.listPermissao = [];
       for (let perm of resp){
         let add = true;
         for(let pu of this.user.listPermissoes){
           if(pu.idPermissao === perm.idPermissao){
-            console.log(pu.idPermissao +"==="+ perm.idPermissao)
+            console.log(pu.idPermissao +" -- "+ perm.idPermissao)
             add = false;
             break;
           }
@@ -104,9 +103,20 @@ export class UserFormComponent implements OnInit {
         }
       }
     });
+
+    this.form = new FormGroup({
+      // username:new FormControl('',[Validators.required]),
+      nome: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.email, Validators.required, Validators.minLength(5)]),
+      password: new FormControl('', [Validators.required]),
+    });
   }
 
   public submit(): void {
+    this.showMessageService.addSuccess("Sucesso","Sucesso.");
+    this.showMessageService.addError("Erro","Erro.");
+    this.showMessageService.addWarn("Warni","dsadsa");
+    this.showMessageService.addInfo("info","dsadsa");
     console.log(this.user.listPermissoes);
     if (!this.form.valid) {
       return;
@@ -118,6 +128,7 @@ export class UserFormComponent implements OnInit {
     }
 
     this.userService.save(this.user);
+    this.messageService.add({severity: 'error', summary: 'Erro', detail: 'Selecione'});
     return;
   }
 

@@ -10,6 +10,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {UsModule} from './us/us.module';
 import {PrimeNGAppUse} from './prime-ng-app-use.module';
+import {ComponentsModule} from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {PrimeNGAppUse} from './prime-ng-app-use.module';
     FormsModule,
     InputTextModule,
     NoopAnimationsModule,
-    PrimeNGAppUse
+    PrimeNGAppUse,
+    ComponentsModule
   ],
   bootstrap: [AppComponent],
   providers: [

@@ -1,6 +1,7 @@
 package br.com.feliva.endPoints;
 
 import br.com.feliva.dao.UsuarioDAO;
+import br.com.feliva.models.Resposta;
 import br.com.feliva.models.Usuario;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
@@ -15,11 +16,14 @@ public class UsuarioEndPoint {
     @Inject
     UsuarioDAO usuarioDAO;
 
+//    http://localhost:8081/usuario/listAll
     @Path("/listAll")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listAll(){
-        return Response.ok(usuarioDAO.listAll()).build();
+        Resposta r = new Resposta();
+        r.dados = usuarioDAO.listAll();
+        return Response.ok(r).build();
     }
 
     @POST
