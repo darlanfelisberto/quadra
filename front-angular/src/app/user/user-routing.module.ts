@@ -28,7 +28,7 @@ USER_MENU.getRoute().children = [
   USER_FORM_NOVO.getRoute()
 ]
 
-console.log(USER_MENU);
+//console.log(USER_MENU);
 
 const usersRoutes: Routes = [
  USER_MENU.getRoute()
