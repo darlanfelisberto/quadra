@@ -12,7 +12,7 @@ import {ShowMessageService} from '../components/show-message/show-message.servic
   selector: 'app-form-user',
   template: `
     <div>
-      <p-toast life="200000"  ></p-toast>
+      <p-toast [life]="200000"  ></p-toast>
       <p-panel header="Dados usuário">
         <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off">
           <div class="card">

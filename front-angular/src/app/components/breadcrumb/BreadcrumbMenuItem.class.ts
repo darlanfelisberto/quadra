@@ -11,7 +11,6 @@ export class BreadMenuItem{
   icon:string = '';
   route?:Route;
 
-  static readonly HOME:BreadMenuItem = this.createHOME();
   static readonly SEPARATOR:BreadMenuItem = this.createSeparator();
 
   constructor(path:string,label:string,index:number,before:number) {
@@ -21,7 +20,7 @@ export class BreadMenuItem{
     this.before = before;
   }
 
-  createRoute(route:Route){
+  createRoute(route:Route):BreadMenuItem{
     this.route = route;
     this.route.data = {'breadMenuItem':this};
     this.route.path = this.path;
@@ -42,14 +41,21 @@ export class BreadMenuItem{
     return bread;
   }
 
-  static createHOME():BreadMenuItem{
-    let bread = new BreadMenuItem('#','',-2,-2);
-    bread.icon = 'pi pi-home';
-    return bread;
+  static builder(breadcrumb:BreadMenuItem):BreadMenuItem{
+    return breadcrumb;
   }
 
-  static inicializaBreadcrumbList() :BreadMenuItem[]{
-    return [BreadMenuItem.HOME];
+  addChildren(breadcrumb:BreadMenuItem){
+    if(this.route === undefined ){
+      throw Error("Rota nao definida!");
+    }
+    if(this.route.children === undefined ){
+      this.route.children = [];
+    }
+
+    this.route.children.push(breadcrumb.getRoute());
+
+    return this;
   }
 }
 
