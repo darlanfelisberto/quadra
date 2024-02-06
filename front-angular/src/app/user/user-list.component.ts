@@ -8,7 +8,6 @@ import {ConfirmationService, MessageService} from 'primeng/api';
 @Component({
   selector: 'app-list-usuarios',
   template: `
-
     <p-panel header="Lista de Usuários">
       <p-table [value]="this.listUsuarios">
         <!--ng-template pTemplate="caption">
