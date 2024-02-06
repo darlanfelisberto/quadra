@@ -8,7 +8,6 @@ import {ConfirmationService, MessageService} from 'primeng/api';
 @Component({
   selector: 'app-list-usuarios',
   template: `
-
     <p-panel header="Lista de Usuários">
       <p-table [value]="this.listUsuarios">
         <!--ng-template pTemplate="caption">
@@ -29,9 +28,6 @@ import {ConfirmationService, MessageService} from 'primeng/api';
             <td>{{usuario.email}}</td>
             <td>
               <div class="ui-panelmenu flex justify-content-center flex-wrap gap-3 mb-4">
-                <a routerLink="/user/edit/1" class="p-element">
-                  <i class="pi pi-pencil"></i>
-                </a>
                 <div icon="pi pi-check" styleclass="p-button-rounded p-button-text" class="p-element">
                   <a class="p-ripple p-element p-button-rounded p-button-text p-button p-component p-button-icon-only" ro >
                     <span class="pi pi-check p-button-icon ng-star-inserted"></span>
